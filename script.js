@@ -1,37 +1,52 @@
 /** Array of possible selections for computer */
 
 const rndmSelection = ["rock", "paper", "scissors"];
+const possibleSelectionsPlayer = ["rock", "paper", "scissors"];
+let round = 0;
+let playerWins = 0;
+let computerWins = 0;
+
 
     function playRound(playerSelection, computerSelection)
     {
-        /** All possible win conditions, for both the player and the computer */
 
-        if (playerSelection == "rock" && computerSelection == "paper")
+        /** All possible win conditions, for both the player and the computer */
+       if (possibleSelectionsPlayer.indexOf(playerSelection) === -1)
         {
-          return "Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
+           return "Wrong input!" 
+        }  
+       else if (playerSelection == "rock" && computerSelection == "paper")
+        {
+            computerWins++
+             return "Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
         }
 
         else if (playerSelection == "rock" && computerSelection == "scissors")
         {
+            playerWins++
             return "You win! You have " + playerSelection + " and the PC has " + computerSelection
         }
 
         else if (playerSelection == "paper" && computerSelection == "rock")
         {
+            playerWins++
             return "You win! You have " + playerSelection + " and the PC has " + computerSelection
         }
 
         else if (playerSelection == "paper" && computerSelection == "scissors")
         {
+            computerWins++
             return "Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
         }
         else if (playerSelection == "scissors" && computerSelection == "paper")
         {
+            playerWins++
             return "You win! You have " + playerSelection + " and the PC has " + computerSelection
         }
 
         else if (playerSelection == "scissors" && computerSelection == "rock")
         {
+            computerWins++
             return "Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
         }
 
@@ -59,7 +74,7 @@ const rndmSelection = ["rock", "paper", "scissors"];
  
         }
          
-    } 
+    }; 
     
     /** Random choice from the array we created at the start */
 
@@ -68,9 +83,37 @@ function getComputerChoice()
     return rndmSelection[~~(Math.random() * rndmSelection.length)];
 }
 
+function getPlayerChoice()
+{
+    return prompt("Please choose between 'rock', 'paper' and 'scissors' and write it here");
+}
 
-const playerSelection = "paper";
-const computerSelection = getComputerChoice();
+function startGame()
+{
+    for (let i = 0; i <=5; i++) 
+    {
+        round++
+        console.log(game(playRound));
+
+        if (round == 5 && playerWins > computerWins)
+        {
+            round = 0;
+            return "You win the game!"
+        }
+        else if (round == 5 && playerWins < computerWins)
+        {
+            round = 0;
+            return "Computer wins the game! World domination by AI is imminent!"
+        }    
+    } 
+}
+
  
+function game(playRound)
+{   
+    let computerSelection = getComputerChoice();
+    let playerSelection = getPlayerChoice();
+    return playRound(playerSelection, computerSelection);    
+}
 
-console.log(playRound(playerSelection, computerSelection));
+console.log(startGame(game))
