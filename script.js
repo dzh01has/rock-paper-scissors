@@ -1,7 +1,11 @@
+/** Array of possible selections for computer */
+
 const rndmSelection = ["rock", "paper", "scissors"];
 
     function playRound(playerSelection, computerSelection)
     {
+        /** All possible win conditions, for both the player and the computer */
+
         if (playerSelection == "rock" && computerSelection == "paper")
         {
           return "Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
@@ -30,7 +34,9 @@ const rndmSelection = ["rock", "paper", "scissors"];
         {
             return "Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
         }
-    
+
+            /** Draw conditions */
+
         else 
         {
             switch (true) 
@@ -54,8 +60,8 @@ const rndmSelection = ["rock", "paper", "scissors"];
         }
          
     } 
-  
-
+    
+    /** Random choice from the array we created at the start */
 
 function getComputerChoice() 
 {
@@ -65,8 +71,6 @@ function getComputerChoice()
 
 const playerSelection = "paper";
 const computerSelection = getComputerChoice();
-/**const computerSelection = "paper";*/
  
-
 
 console.log(playRound(playerSelection, computerSelection));
