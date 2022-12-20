@@ -6,7 +6,6 @@ let round = 0;
 let playerWins = 0;
 let computerWins = 0;
 
-
     function playRound(playerSelection, computerSelection)
     {
 
@@ -83,10 +82,14 @@ function getComputerChoice()
     return rndmSelection[~~(Math.random() * rndmSelection.length)];
 }
 
+    /** Prompt to get input from the player */
+
 function getPlayerChoice()
 {
     return prompt("Please choose between 'rock', 'paper' and 'scissors' and write it here");
 }
+
+    /** Uses the function under this one in a 'for loop' to end the game after 5 rounds, keeps score to decide the ultimate winner */
 
 function startGame()
 {
@@ -108,7 +111,8 @@ function startGame()
     } 
 }
 
- 
+ /** Function to start the game */
+
 function game(playRound)
 {   
     let computerSelection = getComputerChoice();
