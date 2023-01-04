@@ -103,14 +103,12 @@ container.appendChild(rounds);
     }; 
     
     /** Random choice from the array we created at the start */
-
 function getComputerChoice() 
 {
     return rndmSelection[~~(Math.random() * rndmSelection.length)];
 }
 
 /** Choice buttons which also start the game */
-
         btn1.addEventListener('click', function (e) 
         {
             round ++;
