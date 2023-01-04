@@ -22,7 +22,7 @@ container.appendChild(result);
 result.textContent = "Winner: "
 const rounds = document.createElement('div');
 rounds.classList.add('rounds');
-rounds.textContent = "Round: " + round;
+rounds.textContent = "Round: " + round + " out of 5";
 container.appendChild(rounds);
 
 
@@ -38,41 +38,41 @@ container.appendChild(rounds);
         {
             computerWins++
             result.textContent = "Winner: Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round;
+            rounds.textContent = "Round: " + round + " out of 5";
         }
 
         else if (playerSelection == "rock" && computerSelection == "scissors")
         {
             playerWins++
             result.textContent = "Winner: You win! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round;
+            rounds.textContent = "Round: " + round + " out of 5";
         }
 
         else if (playerSelection == "paper" && computerSelection == "rock")
         {
             playerWins++
             result.textContent = "Winner: You win! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round;
+            rounds.textContent = "Round: " + round + " out of 5";
         }
 
         else if (playerSelection == "paper" && computerSelection == "scissors")
         {
             computerWins++
             result.textContent = "Winner: Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round;
+            rounds.textContent = "Round: " + round + " out of 5";
         }
         else if (playerSelection == "scissors" && computerSelection == "paper")
         {
             playerWins++
             result.textContent = "Winner: You win! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round;
+            rounds.textContent = "Round: " + round + " out of 5";
         }
 
         else if (playerSelection == "scissors" && computerSelection == "rock")
         {
             computerWins++
             result.textContent = "Winner: Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round;
+            rounds.textContent = "Round: " + round + " out of 5";
         }
 
         /** Draw conditions */
@@ -83,17 +83,17 @@ container.appendChild(rounds);
             case (playerSelection && computerSelection == "rock"):
 
             result.textContent = "Winner: No one, it's a draw! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round;
+            rounds.textContent = "Round: " + round + " out of 5";
        
             case (playerSelection && computerSelection == "paper"):
 
             result.textContent = "Winner: No one, it's a draw! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round;  
+            rounds.textContent = "Round: " + round + " out of 5";  
 
             case (playerSelection && computerSelection == "scissors"):
 
             result.textContent = "Winner: No one, it's a draw! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round;  
+            rounds.textContent = "Round: " + round + " out of 5";  
           
             default:
             return "Poop"
@@ -119,7 +119,7 @@ function getComputerChoice()
             if (round == 5 && playerWins > computerWins)
             {
                 result.textContent = "You win the game!!!!!"
-                rounds.textContent = "Round: 5";
+                rounds.textContent = "Round: 5 out of 5";
                 btn1.disabled = true;
                 btn2.disabled = true;
                 btn3.disabled = true;
@@ -129,7 +129,7 @@ function getComputerChoice()
             else if (round == 5 && playerWins < computerWins)
             {
                 result.textContent = "Computer wins the game! World domination by AI is imminent!"
-                rounds.textContent = "Round: 5";
+                rounds.textContent = "Round: 5 out of 5";
                 btn1.disabled = true;
                 btn2.disabled = true;
                 btn3.disabled = true;
@@ -150,7 +150,7 @@ function getComputerChoice()
             if (round == 5 && playerWins > computerWins)
             {
                 result.textContent = "You win the game!!!!!"
-                rounds.textContent = "Round: 5";
+                rounds.textContent = "Round: 5 out of 5";
                 btn1.disabled = true;
                 btn2.disabled = true;
                 btn3.disabled = true;
@@ -160,7 +160,7 @@ function getComputerChoice()
             else if (round == 5 && playerWins < computerWins)
             {
                 result.textContent = "Computer wins the game! World domination by AI is imminent!"
-                rounds.textContent = "Round: 5";
+                rounds.textContent = "Round: 5 out of 5";
                 btn1.disabled = true;
                 btn2.disabled = true;
                 btn3.disabled = true;
@@ -181,7 +181,7 @@ function getComputerChoice()
             if (round == 5 && playerWins > computerWins)
             {
                 result.textContent = "You win the game!!!!!";
-                rounds.textContent = "Round: 5";
+                rounds.textContent = "Round: 5 out of 5";
                 btn1.disabled = true;
                 btn2.disabled = true;
                 btn3.disabled = true;
@@ -191,7 +191,7 @@ function getComputerChoice()
             else if (round == 5 && playerWins < computerWins)
             {
                 result.textContent = "Computer wins the game! World domination by AI is imminent!";
-                rounds.textContent = "Round: 5";
+                rounds.textContent = "Round: 5 out of 5";
                 btn1.disabled = true;
                 btn2.disabled = true;
                 btn3.disabled = true;
