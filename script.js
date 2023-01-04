@@ -205,7 +205,6 @@ function getComputerChoice()
             }  
         });
 
-
 /** Button to restart the game */        
         btn4.addEventListener('click', function (e) 
         {
