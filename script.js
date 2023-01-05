@@ -122,6 +122,7 @@ function getComputerChoice()
 }
 
 /** Choice buttons which also start the game */
+/** Also includes win/loss/draw logic */
         btn1.addEventListener('click', function (e) 
         {
             round ++;
