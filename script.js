@@ -14,7 +14,7 @@ const btn3 = document.querySelector('#Scissors');
 const btn4 = document.querySelector('#Restart');
 btn4.disabled = true;
 
-/** container and div for score and result */
+/** container and div for rounds played, score and result */
 const container = document.querySelector('#container');
 const result = document.createElement('div');
 result.classList.add('result');
@@ -28,7 +28,6 @@ const rounds = document.createElement('div');
 rounds.classList.add('rounds');
 rounds.textContent = "Round: " + round + " out of 5";
 container.appendChild(rounds);
-
 
 
 /** game logic */
@@ -116,7 +115,7 @@ container.appendChild(rounds);
         }  
     }; 
     
-    /** Random choice from the array we created at the start */
+/** Random choice from the array we created at the start */
 function getComputerChoice() 
 {
     return rndmSelection[~~(Math.random() * rndmSelection.length)];
