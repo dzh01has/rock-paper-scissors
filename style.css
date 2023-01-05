@@ -1,0 +1,65 @@
+body 
+{
+    background-color: #1f2937;
+
+}
+
+#container 
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    overflow: auto;
+}
+
+.result, .rounds, .score 
+{
+    color: azure;
+    font-weight: bold;
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+
+#button-container 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+    overflow: auto;
+}
+
+#rps-container 
+{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 10.625rem;
+    gap: 8rem;
+}
+
+button 
+{
+    font-size: 2.625rem;
+    border-width: 0.063rem;
+    border-radius: 0.625rem;
+    height: 9.375rem;
+    width: 15.625rem;
+    font-weight: bold;
+    background-color: #3882f6;
+    border-color: transparent;
+    color: azure;
+    overflow: auto;
+}
+
+
+
+@media all and (min-width: 1200px) 
+{
+    body
+    {
+        width: 100%;
+    }
+}
