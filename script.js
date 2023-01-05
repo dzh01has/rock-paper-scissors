@@ -20,10 +20,15 @@ const result = document.createElement('div');
 result.classList.add('result');
 container.appendChild(result);
 result.textContent = "Winner: "
+const score = document.createElement('div');
+score.classList.add('score');
+score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"
+container.appendChild(score);
 const rounds = document.createElement('div');
 rounds.classList.add('rounds');
 rounds.textContent = "Round: " + round + " out of 5";
 container.appendChild(rounds);
+
 
 
 /** game logic */
@@ -39,6 +44,7 @@ container.appendChild(rounds);
             computerWins++
             result.textContent = "Winner: Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
             rounds.textContent = "Round: " + round + " out of 5";
+            score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"
         }
 
         else if (playerSelection == "rock" && computerSelection == "scissors")
@@ -46,6 +52,7 @@ container.appendChild(rounds);
             playerWins++
             result.textContent = "Winner: You win! You have " + playerSelection + " and the PC has " + computerSelection
             rounds.textContent = "Round: " + round + " out of 5";
+            score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"
         }
 
         else if (playerSelection == "paper" && computerSelection == "rock")
@@ -53,6 +60,7 @@ container.appendChild(rounds);
             playerWins++
             result.textContent = "Winner: You win! You have " + playerSelection + " and the PC has " + computerSelection
             rounds.textContent = "Round: " + round + " out of 5";
+            score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"
         }
 
         else if (playerSelection == "paper" && computerSelection == "scissors")
@@ -60,12 +68,14 @@ container.appendChild(rounds);
             computerWins++
             result.textContent = "Winner: Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
             rounds.textContent = "Round: " + round + " out of 5";
+            score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"
         }
         else if (playerSelection == "scissors" && computerSelection == "paper")
         {
             playerWins++
             result.textContent = "Winner: You win! You have " + playerSelection + " and the PC has " + computerSelection
             rounds.textContent = "Round: " + round + " out of 5";
+            score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"
         }
 
         else if (playerSelection == "scissors" && computerSelection == "rock")
@@ -73,6 +83,7 @@ container.appendChild(rounds);
             computerWins++
             result.textContent = "Winner: Computer wins! You have " + playerSelection + " and the PC has " + computerSelection
             rounds.textContent = "Round: " + round + " out of 5";
+            score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"
         }
 
         /** Draw conditions */
@@ -84,16 +95,19 @@ container.appendChild(rounds);
 
             result.textContent = "Winner: No one, it's a draw! You have " + playerSelection + " and the PC has " + computerSelection
             rounds.textContent = "Round: " + round + " out of 5";
+            score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"
        
             case (playerSelection && computerSelection == "paper"):
 
             result.textContent = "Winner: No one, it's a draw! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round + " out of 5";  
+            rounds.textContent = "Round: " + round + " out of 5";
+            score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"  
 
             case (playerSelection && computerSelection == "scissors"):
 
             result.textContent = "Winner: No one, it's a draw! You have " + playerSelection + " and the PC has " + computerSelection
-            rounds.textContent = "Round: " + round + " out of 5";  
+            rounds.textContent = "Round: " + round + " out of 5";
+            score.textContent = "Player: " + playerWins + " - " + computerWins + " :Computer"  
           
             default:
             return "Poop"
@@ -134,9 +148,20 @@ function getComputerChoice()
                 btn4.disabled = false;
                 return
             }
+            else if (round == 5 && playerWins == computerWins)
+            {
+                result.textContent = "Draw! Press 'Restart' to play again."
+                rounds.textContent = "Round: 5 out of 5";
+                btn1.disabled = true;
+                btn2.disabled = true;
+                btn3.disabled = true;
+                btn4.disabled = false;
+                return
+            }
             else
             {
                 console.log(playRound(playerSelection, computerSelection));
+                btn4.disabled = true; 
             }  
         });
 
@@ -165,10 +190,21 @@ function getComputerChoice()
                 btn4.disabled = false;
                 return
             }
+            else if (round == 5 && playerWins == computerWins)
+            {
+                result.textContent = "Draw! Press 'Restart' to play again."
+                rounds.textContent = "Round: 5 out of 5";
+                btn1.disabled = true;
+                btn2.disabled = true;
+                btn3.disabled = true;
+                btn4.disabled = false;
+                return
+            }
             else
             {
                 console.log(playRound(playerSelection, computerSelection));
-            }    
+                btn4.disabled = true; 
+            }   
         });
 
         btn3.addEventListener('click', function (e) 
@@ -196,11 +232,21 @@ function getComputerChoice()
                 btn4.disabled = false;
                 return
             }
+            else if (round == 5 && playerWins == computerWins)
+            {
+                result.textContent = "Draw! Press 'Restart' to play again."
+                rounds.textContent = "Round: 5 out of 5";
+                btn1.disabled = true;
+                btn2.disabled = true;
+                btn3.disabled = true;
+                btn4.disabled = false;
+                return
+            }
             else
             {
                 console.log(playRound(playerSelection, computerSelection));
-                btn4.disabled = true;
-            }  
+                btn4.disabled = true; 
+            }   
         });
 
 /** Button to restart the game */        
