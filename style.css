@@ -1,6 +1,7 @@
 body 
 {
     background-color: #1f2937;
+    align-items: center;
 }
 
 #container 
@@ -55,10 +56,32 @@ button
 
 
 
-@media all and (min-width: 1200px) 
+@media all and (max-width: 1200px) 
 {
     body
     {
         width: 100%;
+    }
+
+    #container 
+    {
+        flex-direction: column;
+    }
+
+    #button-container
+    {
+        gap: 2rem;
+    }
+
+    #rps-container
+    {
+        gap: 1rem;
+    }
+
+    button
+    {
+        font-size: 20px;
+        height: 50px;
+        width: 150px;
     }
 }
