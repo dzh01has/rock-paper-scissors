@@ -2,6 +2,8 @@ body
 {
     background-color: #1f2937;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 #container 
@@ -19,6 +21,11 @@ body
     font-weight: bold;
     font-size: 2rem;
     padding-top: 2rem;
+}
+
+.result
+{
+    width: 20rem;
 }
 
 #button-container 
@@ -66,6 +73,7 @@ button
     #container 
     {
         flex-direction: column;
+        gap: 2rem;
     }
 
     #button-container
@@ -76,6 +84,7 @@ button
     #rps-container
     {
         gap: 1rem;
+        padding-top: 7rem;
     }
 
     button
@@ -83,5 +92,16 @@ button
         font-size: 20px;
         height: 50px;
         width: 150px;
+    }
+
+    .result, .rounds, .score 
+    {
+    font-size: 20px;
+    height: 5rem;
+    }
+
+    .result
+    {
+        width: 17rem;
     }
 }
